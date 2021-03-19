@@ -745,9 +745,9 @@ return false
 end
 if database:get(bot_id..'Lock:Games'..msg.chat_id_) then
 database:del(bot_id..'Boos:Tr'..msg.chat_id_)
-KlamBoos = {'سيف الدين','عبدالملك بن مروان','1914','الملك خفرع','سورة طه','الروم','التبت','روسيا','الانف والاذن','8كواكب','الارز','شرغوف','الفهد','الثديات','النمر','باسكال','1939'};
-name = KlamBoos[math.random(#KlamBoos)]
-database:set(bot_id..'Klam:Boos'..msg.chat_id_,name)
+KtBoos = {'سيف الدين','عبدالملك بن مروان','1914','الملك خفرع','سورة طه','الروم','التبت','روسيا','الانف والاذن','8كواكب','الارز','شرغوف','الفهد','الثديات','النمر','باسكال','1939'};
+name = KtBoos[math.random(#KtBoos)]
+database:set(bot_id..'Kt:Boos'..msg.chat_id_,name)
 name = string.gsub(name,' دحوو1م ',' نسبة رضاك عن الأشخاص من حولك هالفترة ؟ ')
 name = string.gsub(name,' دحوو2م ',' ما السيء في هذه الحياة ؟ ')
 name = string.gsub(name,' دحوو3م ','الفلوس او الحب ؟')
@@ -875,7 +875,7 @@ return false
 end
 end
 ------------------------------------------------------------------------
-if text == ''..(database:get(bot_id..'Klam:Boos'..msg.chat_id_) or '')..'' and not database:get(bot_id..'Bos:Tr'..msg.chat_id_) then
+if text == ''..(database:get(bot_id..'Kt:Boos'..msg.chat_id_) or '')..'' and not database:get(bot_id..'Boos:Tr'..msg.chat_id_) then
 if not database:get(bot_id..'Boos:Tr'..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'*✧ احسنت اجـابـتـك صـحيـحـة ✧*')
 database:incrby(bot_id..'NUM:GAMES'..msg.chat_id_..msg.sender_user_id_, 1)  
