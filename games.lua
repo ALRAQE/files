@@ -867,9 +867,9 @@ name = string.gsub(name,' دحوو116م ',' ردة فعلك لما تنظلم م
 name = string.gsub(name,' دحوو117م ',' شيء تعترف انك فاشل فيه ؟ ')
 name = string.gsub(name,' دحوو118م ',' اكثر كلمة ترفع ضغطك ؟ ')
 name = string.gsub(name,'نسبة جمال صوتك ؟ ','سيمصخي')
-name = string.gsub(name,'كيف تتعامل مع الشخص المُتطفل ( الفضولي ) ؟ ','لسنيني')
+name = string.gsub(name,'كيف تتعامل مع الشخص المُتطفل الفضولي ؟ ','لسنيني')
 name = string.gsub(name,'من الاشياء اللي تجيب لك الصداع ؟ ','تنسموي')
-name = string.gsub(name,' حصلت الشخص اللي يفهمك ولا باقي ؟ 'ددددلا')
+name = string.gsub(name,' حصلت الشخص اللي يفهمك ولا باقي ','ددددلا')
 send(msg.chat_id_, msg.id_,'✧| *» {'..name..'}*')
 return false
 end
