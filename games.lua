@@ -290,7 +290,7 @@ name = string.gsub(name,'موعطشان','عطشان')
 name = string.gsub(name,'خوش ولد','موخوش ولد')
 name = string.gsub(name,'حمار','مطي')
 name = string.gsub(name,'هادئ','عصبي')
-send(msg.chat_id_, msg.id_,'🎗️| اسرع واحد يرسل العكس* » {'..name..'}*')
+send(msg.chat_id_, msg.id_,'✧| اسرع واحد يرسل العكس* » {'..name..'}*')
 return false
 end
 end
