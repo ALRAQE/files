@@ -862,7 +862,9 @@ name = string.gsub(name,' دحوو119م ',' نسبة جمال صوتك ؟ ')
 name = string.gsub(name,' دحوو120م ',' كيف تتعامل مع الشخص المُتطفل ( الفضولي ) ؟ ')
 name = string.gsub(name,' دحوو121م ',' من الاشياء اللي تجيب لك الصداع ؟ ')
 name = string.gsub(name,' دحوو122م ',' حصلت الشخص اللي يفهمك ولا باقي ؟ ')
-return '-› '..name..'  ' 
+send(msg.chat_id_, msg.id_,'*✧|» {'..name..'}*')
+return false
+end
 end
 ------------------------------------------------------------------------
 if text == ''..(database:get(bot_id..'Klam:Dwl'..msg.chat_id_) or '')..'' and not database:get(bot_id..'Dwl:Tr'..msg.chat_id_) then
