@@ -725,6 +725,14 @@ send(msg.chat_id_, msg.id_,'*✧| أسرع شخص يرسل اسم الدولة �
 return false
 end
 end
+------------------------------------------------------------------------
+if text == ''..(database:get(bot_id..'Klam:Dwl'..msg.chat_id_) or '')..'' and not database:get(bot_id..'Dwl:Tr'..msg.chat_id_) then
+if not database:get(bot_id..'Dwl:Tr'..msg.chat_id_) then 
+send(msg.chat_id_, msg.id_,'*✧ احسنت اجـابـتـك صـحيـحـة ✧*')
+database:incrby(bot_id..'NUM:GAMES'..msg.chat_id_..msg.sender_user_id_, 5)  
+end
+database:set(bot_id..'Dwl:Tr'..msg.chat_id_,true)
+end 
 if text == 'تويت' or text == 'كت تويت' or text == 'كت' then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -867,12 +875,12 @@ return false
 end
 end
 ------------------------------------------------------------------------
-if text == ''..(database:get(bot_id..'Klam:Dwl'..msg.chat_id_) or '')..'' and not database:get(bot_id..'Dwl:Tr'..msg.chat_id_) then
-if not database:get(bot_id..'Dwl:Tr'..msg.chat_id_) then 
-send(msg.chat_id_, msg.id_,'*✧ احسنت اجـابـتـك صـحيـحـة ✧*')
+if text == ''..(database:get(bot_id..'Klam:twet'..msg.chat_id_) or '')..'' and not database:get(bot_id..'twet:Tr'..msg.chat_id_) then
+if not database:get(bot_id..'twet:Tr'..msg.chat_id_) then 
+send(msg.chat_id_, msg.id_,'*✧✧*')
 database:incrby(bot_id..'NUM:GAMES'..msg.chat_id_..msg.sender_user_id_, 5)  
 end
-database:set(bot_id..'Dwl:Tr'..msg.chat_id_,true)
+database:set(bot_id..'twet:Tr'..msg.chat_id_,true)
 end 
 if text == 'تعطيل العاب البوت' and Manager(msg) then   
 if database:get(bot_id..'Lock:Games'..msg.chat_id_)  then
