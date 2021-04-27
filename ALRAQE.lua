@@ -45,6 +45,7 @@ else
 io.write('\n\27[1;31mThe UserName was not Saved : لم يتم حفظ معرف Carbon\n\27[0;39;49m')
 os.execute('lua ALRAQE.lua')
 end
+
 ------------------------------------------------------------------------------------------------------------
 local Dev_Info_Sudo = io.open("Info_Sudo.lua", 'w')
 Dev_Info_Sudo:write([[
@@ -105,6 +106,7 @@ Status = false
 end  
 return Status
 end
+Load_File()
 ------------------------------------------------------------------------------------------------------------
 sudos = dofile("./Info_Sudo.lua")
 token = sudos.Token_Bot
