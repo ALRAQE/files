@@ -33,10 +33,6 @@ if not redis:get(Server_Devid.."User_Devbots1") then
 io.write('\n\27[1;35mSend UserName For Sudo : ارسل معرف Carbon ...\n\27[0;39;49m')
 local User_Sudo = io.read():gsub('@','')
 local User_Info = JSON.decode(User_Sudo) 
-if User_Info.Info.Chek == "Not_Info" then
-io.write('\n\27[1;31m The UserName was not Saved : المعرف غلط ارسل المعرف صحيح\n\27[0;39;49m')
-os.execute('lua ALRAQE.lua')
-end
 if User_Info.Info == 'Channel' then
 io.write('\n\27[1;31m The UserName Is Channel : عذرا هاذا معرف قناة وليس حساب \n\27[0;39;49m')
 os.execute('lua ALRAQE.lua')
@@ -49,7 +45,6 @@ else
 io.write('\n\27[1;31mThe UserName was not Saved : لم يتم حفظ معرف Carbon\n\27[0;39;49m')
 os.execute('lua ALRAQE.lua')
 end
-
 ------------------------------------------------------------------------------------------------------------
 local Dev_Info_Sudo = io.open("Info_Sudo.lua", 'w')
 Dev_Info_Sudo:write([[
@@ -110,7 +105,6 @@ Status = false
 end  
 return Status
 end
-Load_File()
 ------------------------------------------------------------------------------------------------------------
 sudos = dofile("./Info_Sudo.lua")
 token = sudos.Token_Bot
@@ -2624,7 +2618,7 @@ return false end
 end
 if text == 'تحديث السورس' and Dev_Bots(msg) then 
 os.execute('rm -rf ALRAQE.lua')
-os.execute('wget https://raw.githubusercontent.com/ALRAQE/ALRAQE/main/ALRAQE.lua')
+os.execute('wget https://raw.githubusercontent.com/ALRAQE/ALRAQI/main/ALRAQE.lua')
 send(msg.chat_id_, msg.id_,'• تم تحديث السورس')
 dofile('ALRAQE.lua')  
 end
